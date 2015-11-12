@@ -1,0 +1,23 @@
+{
+  "name": "key-value-table-directive",
+  "description": "An angular directive to generate a Bootstrap key-value table.",
+  "main": "dist/key-value-table-directive.js",
+  "authors": [
+    "Hans Scheuren <hans.scheuren@bizliner.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/belgac/key-value-table-directive",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "bs-fa-boolean-directive": "~1.0.0",
+    "key-value-parser-factory": "~1.0.1"
+  }
+}

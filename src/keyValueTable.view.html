@@ -1,0 +1,45 @@
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th ng-if="keyValueTable.direction === 'horizontal'" ng-repeat="keyvalue in keyValueTable.data">
+          {{keyvalue.label}}
+        </th>
+        <th ng-if="keyValueTable.direction === 'vertical' && keyValueTable.title" colspan=2>
+          {{keyValueTable.title}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-if="keyValueTable.direction === 'horizontal'">
+        <td ng-repeat="keyvalue in keyValueTable.data">
+           <span ng-if="!keyvalue.type">
+             {{keyvalue.value}}
+           </span>
+          <span ng-if="keyvalue.type === 'boolean'">
+            <bsfaboolean value="keyvalue.value"></bsfaboolean>
+          </span>
+          <span ng-if="keyvalue.type==='number' && keyvalue.subType==='currency'">
+            {{keyvalue.value | currency : $}}
+          </span>
+        </td>
+      </tr>
+      <tr ng-if="keyValueTable.direction === 'vertical'" ng-repeat="keyvalue in keyValueTable.data">
+        <th>
+          {{keyvalue.label}}
+        </th>
+        <td>
+          <span ng-if="!keyvalue.type">
+             {{keyvalue.value}}
+           </span>
+          <span ng-if="keyvalue.type === 'boolean'">
+            <bsfaboolean value="keyvalue.value"></bsfaboolean>
+          </span>
+          <span ng-if="keyvalue.type==='number' && keyvalue.subType==='currency'">
+            {{keyvalue.value | currency : $}}
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

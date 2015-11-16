@@ -7,6 +7,7 @@ function keyValueTable($templateCache) {
     restrict: 'E',
     scope: {
       datatoparse: '=',
+      parseddata: '=',
       model: '=',
       direction:'=',
       title:'='

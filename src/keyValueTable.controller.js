@@ -6,6 +6,10 @@ function keyValueTableController (bgqKeyValueParserFactory) {
   init();
   
   function init(){
-    vm.data = bgqKeyValueParserFactory.parse(vm.datatoparse,vm.model);
+    if (vm.datatoparse) {
+      vm.data = bgqKeyValueParserFactory.parse(vm.datatoparse,vm.model);
+    } else if (vm.parseddata) {
+      vm.data = vm.parseddata
+    }
   }
 }
